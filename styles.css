@@ -1,0 +1,139 @@
+/* Reset default spacing */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-page background */
+body {
+  background-color: #101010;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Centering container */
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+/* The central boarder with a black border, a subtle gradient, and constant shake animation */
+#center-border {
+  display: flex;
+  width: 80%;
+  max-width: 800px;
+  background: linear-gradient(135deg, #333, #000);
+  border: 5px solid black;
+  padding: 20px;
+  position: relative;
+  animation: shake 3s infinite;
+  transition: box-shadow 0.3s;
+}
+
+/* Glowing purple shadow on hover/click over the boarder */
+#center-border:hover {
+  box-shadow: 0 0 15px purple;
+  cursor: pointer;
+}
+
+/* Left section holds the logo image */
+.left-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.left-section img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Right section holds the headings and buttons */
+.right-section {
+  flex: 1;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.right-section h1 {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 10px;
+  margin-left: 20px; /* Slightly right aligned */
+}
+.right-section h2 {
+  color: grey;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  margin-left: 20px; /* Slightly right aligned */
+}
+
+/* Social Media Buttons styling */
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+/* Default colors for each button */
+.discord {
+  background-color: #7289da;
+}
+.telegram {
+  background-color: #0088cc;
+}
+.mail {
+  background-color: #ffeb3b;
+  color: black; /* Better contrast on yellow */
+}
+
+/* On hover, buttons animate to black */
+.btn:hover {
+  background-color: black;
+}
+
+/* Glowing dot effect for background clicks */
+.dot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: purple;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  animation: dotGlow 1s forwards;
+}
+@keyframes dotGlow {
+  0% {
+    transform: scale(0.5);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Slight shake animation for the center boarder */
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(2px, 2px); }
+  50% { transform: translate(-2px, -2px); }
+  75% { transform: translate(2px, -2px); }
+  100% { transform: translate(0px, 0px); }
+}
