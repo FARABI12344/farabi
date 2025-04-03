@@ -21,3 +21,8 @@ function createDot(x, y) {
     dot.remove();
   }, 1000);
 }
+
+// Disable default browser context menu to avoid extra popups on multiple clicks.
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
